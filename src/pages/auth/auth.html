@@ -1,0 +1,9 @@
+<ion-content padding>
+  <div class="icon-container">
+    <button ion-button icon-only clear class="scanner-button" (click)="login()" *ngIf="auth.touchIdAvailable">
+      <ion-icon name="finger-print" class="scanner-icon"></ion-icon>
+    </button>
+    <button ion-button (click)="login()" *ngIf="!auth.touchIdAvailable">No touch Id available, so just go...</button>
+    <div class="error" *ngIf="error.length">{{error}}</div>
+  </div>
+</ion-content>

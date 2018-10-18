@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar no-border-bottom>
+    <ion-title>
+      Photos
+    </ion-title>
+  </ion-navbar>
+
+  <ion-toolbar no-border-top>
+    <ion-segment [(ngModel)]="subset">
+      <ion-segment-button value="{{''}}">
+        All
+      </ion-segment-button>
+      <ion-segment-button value="{{types.CAMERA}}">
+        Camera
+      </ion-segment-button>
+      <ion-segment-button value="{{types.GALLERY}}">
+        Gallery
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="picture-card" (click)="showActions(i)" *ngFor="let image of filter(images.images); let i = index">
+    <img [src]="image.url"/>
+    <div class="picture-card-footer">
+      <ion-icon *ngIf="image.type === types.CAMERA" name="camera"></ion-icon>
+      <ion-icon *ngIf="image.type === types.GALLERY" name="images"></ion-icon>
+    </div>
+  </ion-card>
+</ion-content>

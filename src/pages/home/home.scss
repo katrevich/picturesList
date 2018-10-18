@@ -1,3 +1,30 @@
 page-home {
+    .home-content{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        bottom: 0px;
+        right: 0px;
+    }
 
+    .button-container{
+        padding: 15px;
+    }
+
+    .preview-card{
+        position: relative;
+        min-height: 100px;
+
+        .buttons{
+            position: absolute;
+            padding: 20px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            font-size: 12px;
+        }
+    }
 }

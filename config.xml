@@ -82,4 +82,32 @@
     <plugin name="cordova-plugin-splashscreen" spec="5.0.2" />
     <plugin name="cordova-plugin-ionic-webview" spec="^2.0.0" />
     <plugin name="cordova-plugin-ionic-keyboard" spec="^2.0.5" />
+    <plugin name="cordova-plugin-camera" spec="^2.4.1">
+        <variable name="CAMERA_USAGE_DESCRIPTION" value=" " />
+        <variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value=" " />
+    </plugin>
+    <plugin name="cordova-plugin-touch-id" spec="^3.3.1">
+        <variable name="FACEID_USAGE_DESCRIPTION" value=" " />
+    </plugin>
+    <allow-navigation href="*" />
+    <allow-navigation href="*://*/*" />
+    <allow-navigation href="file:///*/*" />
+    <allow-navigation href="http://*/*" />
+    <allow-navigation href="https://*/*" />
+    <allow-navigation href="data:*" />
+    <allow-intent href="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <access origin="*" />
+    <access origin="*://*/*" />
+    <access origin="file:///*" />
+    <access origin="cdvfile://*" />
+    <access origin="content:///*" />
+    <allow-navigation href="http://192.168.178.74:8100" sessionid="92f606b3" />
+    <engine name="android" spec="6.0.0" />
+    <engine name="ios" spec="4.5.5" />
 </widget>

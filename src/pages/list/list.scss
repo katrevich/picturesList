@@ -1,0 +1,14 @@
+page-list {
+    .picture-card{
+        position: relative;
+    }
+    .picture-card-footer{
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 10px;
+        color: #ffffff;
+        font-size: 40px;
+    }
+}
