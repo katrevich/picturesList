@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Camera, CameraOptions } from '@ionic-native/camera';
-import { LoadingController, AlertController, normalizeURL, NavController, ActionSheetController, Platform, ActionSheetOptions, ActionSheet } from 'ionic-angular';
+import { LoadingController, AlertController, normalizeURL, NavController, ActionSheetController, Platform } from 'ionic-angular';
 import { ImageType, ImagesProvider } from '../../providers/images/images';
 import { FilePath } from '@ionic-native/file-path';
 import { Diagnostic } from '@ionic-native/diagnostic';
