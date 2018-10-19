@@ -15,9 +15,9 @@ export class AuthPage {
     public navCtrl: NavController, 
     public navParams: NavParams,
     private auth: AuthProvider,
-    private platform: Platform,
+    private platform: Platform, 
   ) {
-    
+
   }
 
   login() {

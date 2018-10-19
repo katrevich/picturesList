@@ -14,5 +14,6 @@ export class MyApp {
     platform.ready().then(() => {
       splashScreen.hide();
     });
+    platform.registerBackButtonAction(() => {});
   }
 }

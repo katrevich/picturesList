@@ -7,6 +7,7 @@ import { Camera } from '@ionic-native/camera';
 import { File } from '@ionic-native/file';
 import { NativeStorage } from '@ionic-native/native-storage';
 import { FilePath } from '@ionic-native/file-path';
+import { Diagnostic } from '@ionic-native/diagnostic';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -50,7 +51,8 @@ import { ImagesProvider } from '../providers/images/images';
     Camera,
     NativeStorage,
     ImagesProvider,
-    FilePath
+    FilePath,
+    Diagnostic
   ]
 })
 export class AppModule {}

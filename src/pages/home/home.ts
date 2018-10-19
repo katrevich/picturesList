@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { Camera, CameraOptions } from '@ionic-native/camera';
-import { LoadingController, AlertController, normalizeURL, NavController, ActionSheetController, Platform } from 'ionic-angular';
+import { LoadingController, AlertController, normalizeURL, NavController, ActionSheetController, Platform, ActionSheetOptions, ActionSheet } from 'ionic-angular';
 import { ImageType, ImagesProvider } from '../../providers/images/images';
 import { FilePath } from '@ionic-native/file-path';
+import { Diagnostic } from '@ionic-native/diagnostic';
 
 @Component({
   selector: 'page-home',
@@ -15,6 +16,7 @@ export class HomePage {
   type: ImageType;
 
   options: CameraOptions;
+  cameraAvailable: boolean = false;
 
   constructor( 
     public navCtrl: NavController, 
@@ -25,6 +27,7 @@ export class HomePage {
     private alert: AlertController,
     private platform: Platform,
     private filePath: FilePath,
+    private diagnostic: Diagnostic,
   ) {
     this.options = {
       quality: 50,
@@ -32,6 +35,10 @@ export class HomePage {
       encodingType: this.camera.EncodingType.JPEG,
       mediaType: this.camera.MediaType.PICTURE,
     }
+    this.diagnostic.isCameraAvailable().then(() => {
+      console.log('camera is available');
+      this.cameraAvailable = true;
+    }).catch(console.log);
   }  
 
   getPhoto(from: ImageType) {
@@ -63,13 +70,10 @@ export class HomePage {
     })
   }
 
-  showActions() { 
+  showActions() {
     const actionSheet = this.action.create({
       buttons: [
         {
-          text: 'Camera',
-          handler: () => this.getPhoto(ImageType.CAMERA)
-        },{
           text: 'Gallery',
           handler: () => this.getPhoto(ImageType.GALLERY)
         },{
@@ -78,6 +82,12 @@ export class HomePage {
         }
       ]
     });
+    if (this.cameraAvailable) {
+      actionSheet.addButton({
+        text: 'Camera',
+        handler: () => this.getPhoto(ImageType.CAMERA)
+      })
+    }
     actionSheet.present();
   }
 
